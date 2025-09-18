@@ -2,12 +2,19 @@
 {
     public class Program
     {
+        static void Main(string[] args)
+        {
+            //Console.WriteLine(Add(1, 2));
+            //Console.WriteLine(Add(3.5m, 7.2m));
+            //Console.WriteLine(Add(4, 6, false));
+            //Console.ReadLine();
+        }
         public static int Add(int a, int b)
         {
             return a + b;
         }
 
-        public static double Add(double a, double b)
+        public static decimal Add(decimal a, decimal b)
         {
             return a + b;
         }
@@ -16,18 +23,23 @@
         {
             var sum = a + b;
 
-            if (isMoney && sum > 1)
+            if (isMoney == true && sum > 1)
             {
                 return $"{sum} dollars";
             }
-            else if (isMoney && sum == 1)
+            else if (isMoney == true && sum == 1)
             {
                 return $"{sum} dollar";
+            }
+            else if (isMoney == false && sum == 1)
+            {
+                return sum.ToString();
             }
             else
             {
                 return sum.ToString();
             }
+
         }
     }
 }
